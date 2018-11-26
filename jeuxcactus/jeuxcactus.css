@@ -1,5 +1,5 @@
 canvas{
-	background-image: url(image/fonddesert.jpg);
+	background-image: url(../imagejeux/jeuxcactus/fonddesert.jpg);
 	background-repeat: no-repeat;
 	border: solid black 2px;
 	margin-left: 421px;
@@ -8,7 +8,7 @@ canvas{
 }
 
 body{
-	background-image: url(image/tele.png);
+	background-image: url(../image/tele.png);
 
 	background-repeat: no-repeat;
 background-size: 100%}
@@ -19,4 +19,9 @@ background-size: 100%}
   width:75px;
   height:75px;
   border:2px solid #679403; 
+}
+
+button{
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
 }

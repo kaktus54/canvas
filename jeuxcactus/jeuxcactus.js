@@ -38,6 +38,7 @@ function keyUpHandler(e) {
     var upPressed = false;
     var downPressed = false;
 
+    var jeuxSelectionner ='jeuxcactus';
 
 window.onload = function()
 {
@@ -54,49 +55,49 @@ window.onload = function()
         alert("Impossible de récupérer le context");
         return;
     }
-        
-    /*player*/
 
+
+
+    /*player*/
+    canvas.style.backgroundImage= "url(../imagejeux/"+jeuxSelectionner+"/fond.jpg)";
     var cactush = new Image();
-    cactush.src = "image/cactush.png";
+    cactush.src = "../imagejeux/"+jeuxSelectionner+"/player.png";
 
     var Player = cactush;
 
     /*player touché*/
 
      var cactust = new Image();
-    cactust.src = "image/cactust.png";
+    cactust.src = "../imagejeux/"+jeuxSelectionner+"/player1.png";
 
      var cactusr = new Image();
-    cactusr.src = "image/cactusr.png";
+    cactusr.src = "../imagejeux/"+jeuxSelectionner+"/player2.png";
 
     var cactusrip = new Image();
-    cactusrip.src = "image/cactusrip.png";
+    cactusrip.src = "../imagejeux/"+jeuxSelectionner+"/player3.png";
 
     var orage = new Image();
-    orage.src = "image/orage.png";
-
-    var Playertouche = ['cactusr','cactust'];
+    orage.src = "../imagejeux/"+jeuxSelectionner+"/dead.png";
 
 
-     /*les objet qui descendent du ciel */
 
-     var soleil = new Image();
-    soleil.src = "image/soleil32.png";
+    /*les objet qui descendent du ciel */
+    var soleil = new Image();
+    soleil.src = "../imagejeux/"+jeuxSelectionner+"/bonus.png";
 
-     var goutte = new Image();
-    goutte.src = "image/goutte32.png";
+    var goutte = new Image();
+    goutte.src = "../imagejeux/"+jeuxSelectionner+"/malus.png";
 
     /*omage et vitesse*/
    var animateOrage=0; 
    var vitesseAnim=0;
-    var vitesseX = 3;
-    var vitesseY = 3;
-    var score =0;
-    var pv =3;
-    var myInterval = setInterval(animate, 1000/30);
+   var vitesseX = 3;
+   var vitesseY = 3;
+   var score =0;
+   var pv =3;
+   var myInterval = setInterval(animate, 1000/30);
 
-        var bonus=[];
+   var bonus=[];
 
     /*mouvement*/
 
@@ -182,8 +183,34 @@ bonus[i].coord[1]+=bonus[i].vitesse+acceleration;
         }
 
     }
+    function modifImage(){
+     soleil.src = "../imagejeux/"+jeuxSelectionner+"/bonus.png";
+     goutte.src = "../imagejeux/"+jeuxSelectionner+"/malus.png";
+     orage.src = "../imagejeux/"+jeuxSelectionner+"/dead.png";
+     cactusrip.src = "../imagejeux/"+jeuxSelectionner+"/player3.png";
+     cactusr.src = "../imagejeux/"+jeuxSelectionner+"/player2.png";
+     cactust.src = "../imagejeux/"+jeuxSelectionner+"/player1.png";
+     cactush.src = "../imagejeux/"+jeuxSelectionner+"/player.png";
+if(jeuxSelectionner=="jeuxvoiture"|| jeuxSelectionner=="jeuxstarswars"){
+     canvas.style.backgroundImage= "url(../imagejeux/"+jeuxSelectionner+"/fond.gif)";
+
+}else{
+         canvas.style.backgroundImage= "url(../imagejeux/"+jeuxSelectionner+"/fond.jpg)";
+
+}
+
+
+    }
     function animate()
     {        
+        document.getElementById("voiture").addEventListener("click", function(){ jeuxSelectionner="jeuxvoiture"; modifImage();});
+        document.getElementById("starswars").addEventListener("click", function(){ jeuxSelectionner="jeuxstarswars"; modifImage();})
+        document.getElementById("noel").addEventListener("click", function(){ jeuxSelectionner="jeuxnoel"; modifImage();})
+        document.getElementById("southparc").addEventListener("click", function(){ jeuxSelectionner="jeuxsouthparc"; modifImage();})
+        document.getElementById("cactus").addEventListener("click", function(){ jeuxSelectionner="jeuxcactus"; modifImage();})
+        document.getElementById("simpson").addEventListener("click", function(){ jeuxSelectionner="jeuxsimpson"; modifImage();})
+
+
             context.clearRect(0,0,canvas.width,canvas.height);
 
         if(pv >0){
