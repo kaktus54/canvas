@@ -1,0 +1,25 @@
+canvas{
+	background-image: url(image/fond.gif);
+	background-repeat: no-repeat;
+	border: solid black 2px;
+	margin-left: 421px;
+    margin-top: 165px;
+    border-radius: 20px;
+}
+
+body{
+	background-image: url(image/tele.png);
+
+	background-repeat: no-repeat;
+background-size: 100%}
+
+
+a{
+	color: red;
+
+	height: 500px;
+	width: 500px;
+	background-color: red;
+
+}
+
