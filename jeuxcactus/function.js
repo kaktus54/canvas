@@ -30,30 +30,29 @@ function modifImage(jeuxSelectionner, tabImage,  canvas) {
     }
 }
 
-
-function initButtonChangeGame(game, canvas, gameName, tabImage, isReset, PV_PLAYER) {
+function initButtonChangeGame(canvas, gameName, tabImage, game, isReset, PV_PLAYER) {
     document.getElementById("voiture").addEventListener("click", function(){
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxvoiture", tabImage, canvas);
     });
     document.getElementById("starswars").addEventListener("click", function() {
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxstarswars", tabImage, canvas);
     });
     document.getElementById("noel").addEventListener("click", function() {
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxnoel", tabImage, canvas);
     });
     document.getElementById("southparc").addEventListener("click", function() {
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxsouthparc", tabImage, canvas);
     });
     document.getElementById("cactus").addEventListener("click", function() {
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxcactus", tabImage, canvas);
     });
     document.getElementById("simpson").addEventListener("click", function() {
-        reset(game, PV_PLAYER);
+        reset(game, PV_PLAYER, true);
         modifImage("jeuxsimpson", tabImage, canvas);
     });
 }
